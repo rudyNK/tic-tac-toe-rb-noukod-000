@@ -34,6 +34,7 @@ end
 def valid_move?(board, input)
   input.to_i.between?(1,9) && !position_taken?(board, input.to_i-1)
 end
+
 def won?(board)
   WIN_COMBINATIONS.detect do |combo|
     board[combo[0]] == board[combo[1]] &&
