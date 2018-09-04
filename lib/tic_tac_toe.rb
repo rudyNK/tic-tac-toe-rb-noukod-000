@@ -74,9 +74,6 @@ end
 def move(board, location, player = "X")
   board[location.to_i-1] = player
 end
-def move(board, index, current_player = "X")
-  board[index] = current_player
-end
 def winner(board)
   if winning_combo = won?(board)
     board[winning_combo.first]
