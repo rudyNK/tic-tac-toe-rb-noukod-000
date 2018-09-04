@@ -31,15 +31,18 @@ def input_to_index(user_input)
   user_input.to_i - 1
 end
 
-def valid_move?(board, input)
-  input.to_i.between?(1,9) && !position_taken?(board, input.to_i-1)
+def valid_move?(board, index)
+ if index.between?(1,9)
+    if !position_taken?(board, index)
+     true
+    end
 end
-def won?(board)
-  WIN_COMBINATIONS.detect do |combo|
-    board[combo[0]] == board[combo[1]] &&
-    board[combo[1]] == board[combo[2]] &&
-    position_taken?(board, combo[0])
-  end
+
+  index.between?(0,8) && !position_taken?(board, index)
+end
+
+def position_taken?(board, index)
+  board[index] != " "
 end
 def full?(board)
   board.all?{|token| token == "X" || token == "O"}
