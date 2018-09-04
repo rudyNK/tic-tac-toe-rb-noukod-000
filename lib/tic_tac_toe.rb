@@ -56,15 +56,9 @@ def turn(board)
   if !valid_move?(board, input)
     turn(board)
   end
-#  move(board, input, current_player(board))
-#  display_board(board)
-#end
-def move(board, index, current_player = "X")
-  board[index] = current_player
+  move(board, input, current_player(board))
+  display_board(board)
 end
-end
-
-
 
 def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
