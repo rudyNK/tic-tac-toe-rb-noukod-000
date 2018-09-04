@@ -59,15 +59,18 @@ def turn(board)
   move(board, input, current_player(board))
   display_board(board)
 end
-def move(board, index, current_player = "X")
-  board[index] = current_player
-end
+
 
 def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
   # Creates a stop on RSpec
   # !(board[location].nil? || board[location] == "")
 end
+
+def move(board, index, current_player = "X")
+  board[index] = current_player
+end
+
 def current_player(board)
   turn_count(board) % 2 == 0 ? "X" : "O"
 end
