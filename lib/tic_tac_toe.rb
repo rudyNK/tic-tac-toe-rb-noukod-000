@@ -54,8 +54,8 @@ def turn(board)
   move(board, input, current_player(board))
   display_board(board)
 end
-def position_taken?(board, location)
-  !(board[location].nil? || board[location] == " ")
+def position_taken?(board, index)
+  !(board[index].nil? || board[index] == " ")
   # Creates a stop on RSpec
   # !(board[location].nil? || board[location] == "")
 end
